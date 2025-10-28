@@ -1,12 +1,10 @@
-import random
-
 def level1(inventory):
 
     while True:
         print("")
         print("вы находитесь в камере за решеткой, что вы хотите сделать?: открыть дверь, посмотреть под шконку, проспать всю ночь, посмотреть инвентарь")
         print("-------------------------")
-        move = input()
+        move = input().lower()
 
         if move == "посмотреть под шконку":
             if "отмычка" in inventory:
@@ -33,14 +31,14 @@ def level1(inventory):
         else:
             print("") 
             print("неизвестная команда")
-        
+ 
 def level2(inventory):
-    
+
     while True:
         print("")
         print("вы вошли в коридор, что вы сделаете?: пойти направо, пойти налево, оглядеться, посмотреть инвентарь")
         print("-------------------------")
-        move = input()
+        move = input().lower()
 
         if move == "оглядеться":
             print("")
@@ -52,7 +50,7 @@ def level2(inventory):
             print("")
             print("-------------------------")
             print("вы пошли налево, рядом спит охранник с кодом от выхода, ваши действия? взять код, прочитать код")
-            action = input()
+            action = input().lower()
             
             if action == "взять код":
                 if "код" in inventory:
@@ -75,12 +73,12 @@ def level2(inventory):
                 return True
 
 def level3(inventory):
-    
+
     while True:
         print("")
         print("вы пришли к двери, ваши действия?: ввести код, вернуться обратно, посмотреть инвентарь, использовать отмычку, прочитать код")
         print("-------------------------")
-        move = input()
+        move = input().lower()
 
         if move == "ввести код":
             print("")
@@ -115,9 +113,7 @@ def level3(inventory):
         else: 
             print("")
             print("неизвестная команда")
-        
-
-
+            
 def main():
     inventory = []
 
@@ -142,16 +138,11 @@ def main():
                 print("-------------------------")
                 print("у вас получилось сбежать!")
                 break
-            
             else:
                 print("вас поймали!")
                 print("-------------------------") 
                 print("вы провалили побег!")
                 break  
-        else:
-            print("-------------------------")
-            print("ошибка: Неизвестный уровень")
-            break
 
 if __name__ == "__main__":
     main()
